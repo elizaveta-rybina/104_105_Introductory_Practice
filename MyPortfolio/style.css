@@ -1,0 +1,106 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ysabeau', sans-serif;      
+    background-color: #FBF5F3;               
+    color: #333333;
+    font-size: 20px;                         
+    line-height: 1.5;
+}
+
+.my-header,
+.my-footer {
+    background-color: #7B0828;   
+    color: #FBF5F3;               
+    padding: 20px;
+    text-align: center;
+}
+
+.my-header h1 {
+    font-family: 'Ysabeau SC', sans-serif;   
+    text-align: center;
+    font-size: 44px;          
+    color: #FBF5F3;          
+    margin: 0px;
+}
+
+.nav-list{
+    display: flex;
+    gap: 540px;
+}
+
+.nav-li {
+    list-style: none;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    gap: 20px;
+}
+
+.nav-li a {
+    color: #FBF5F3;                  
+    text-decoration: none;          
+    font-family: 'Ysabeau SC', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.my-footer a {
+    color: #FBF5F3;
+    text-decoration: none;
+}
+
+.about-me-section,
+.my-hobby-section,
+.sidebar {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.about-me-section {
+    background-color: #FBF5F3;    
+}
+
+.my-hobby-section {
+    background-color: #8DAA9D;    
+    color: #FBF5F3;               
+}
+
+.sidebar {
+    background-color: #8DAA9D;
+    color: #FBF5F3;
+}
+
+.about-me-section h2,
+.my-hobby-section h2,
+.sidebar h3 {
+    font-family: 'Ysabeau SC', sans-serif;   
+    margin-top: 0px;
+}
+
+.about-me-section h2,
+.my-hobby-section h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.sidebar h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hobby-card {
+    border: 3px solid #7B0828;   
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FBF5F3;  
+    color: #333333;
+}
+
+.my-photo {
+    display: block;            
+    margin: 15px auto;
+    width: 500px;
+    border: 3px solid #7B0828;   
+    border-radius: 15px;
+}
