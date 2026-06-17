@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <title> Нефедкин Роман</title>
+   <meta name="description" content="Страница Нефедкина Романа: информация о себе и моем хобби.">
+</head>
+<body>
+
+   <header>
+       <h1>Нефедкин Роман</h1>
+       <nav>
+           <ul>
+               <li><a href="#">Обо мне</a></li>
+               <li><a href="#">Мое хобби</a></li>
+               <li><a href="#">Контакты</a></li>
+           </ul>
+       </nav>
+   </header>
+
+   <main>
+       <section>
+           <h2>Обо мне</h2>
+           <p>Здравствуйте. Меня зовут Роман.</p>
+           <p>Я учусь на первом курсе на ФМиИт. Ниже меня сфоткали прохожие:</p>
+           <img src="https://images.meme-arsenal.com/0fd7896adbda308448b36d39326b97a9.jpg"
+           alt="Моя фотография">
+       </section>
+
+       <section>
+           <h2>Мое хобби</h2>
+           <article>
+               <h3>Карты</h3>
+               <p>Я люблю оставаться в дураках.</p>
+           </article>
+       </section>
+   </main>
+
+   <aside>
+       <h3>Любимые книги</h3>
+       <ol>
+           <li>«Красная шапочка»</li>
+           <li>«Теремок»</li>
+           <li>«Колобок»</li>
+       </ol>
+   </aside>
+
+   <footer>
+       <p>&copy; 2026. <a href="https://github.com/Attilyas" target="_blank">Мой GitHub</a></p>
+   </footer>
+
+</body>
+</html>
