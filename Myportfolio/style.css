@@ -5,30 +5,40 @@ body {
     font-style: normal;
     background-color: #f4f1de;
     color: #2b2d42;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
 }
 
 .site-header {
+    grid-column: 1 / -1;
     padding: 30px;
     background-color: #3d405b;
     color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 
 .main-title {
-    text-align: center;
+    margin: 0;
     color: #f2cc8f;
     font-size: 36px;
 }
 
 .site-nav {
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .nav-list {
     padding: 0;
-    margin: 20px 0 0 0;
+    margin: 0;
     list-style: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
 }
 
@@ -40,18 +50,24 @@ body {
 
 .main-content {
     padding: 30px;
+    display: grid;
+    gap: 30px;
 }
 
 .about-section {
     padding: 25px;
-    margin-bottom: 30px;
     background-color: #ffffff;
     border: 2px solid #141459;
 }
 
 .hobby-section {
     padding: 25px;
-    margin-bottom: 30px;
+    background-color: #ffffff;
+    border: 2px solid #141459;
+}
+
+.cities-section {
+    padding: 25px;
     background-color: #ffffff;
     border: 2px solid #141459;
 }
@@ -69,9 +85,11 @@ body {
 
 .hobby-card {
     padding: 20px;
-    margin-top: 15px;
     background-color: #f4f1de;
     border: 2px solid #141459;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .hobby-title {
@@ -79,9 +97,28 @@ body {
     font-size: 24px;
 }
 
+.cities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.city-card {
+    padding: 20px;
+    background-color: #f4f1de;
+    border: 2px solid #141459;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.city-title {
+    color: #3d405b;
+    font-size: 24px;
+}
+
 .sidebar {
     padding: 25px;
-    margin: 30px;
     background-color: #ffffff;
     border: 2px solid #141459;
 }
@@ -96,10 +133,15 @@ body {
 }
 
 .site-footer {
+    grid-column: 1 / -1;
     padding: 25px;
     background-color: #3d405b;
     color: #ffffff;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .footer-link {
