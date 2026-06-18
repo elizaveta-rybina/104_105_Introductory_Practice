@@ -5,55 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Визитка</title>
     <meta name="description" content="Личная страница.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Андрей Чижиков</h1>
+    <header class="site-header">
+        <h1 class="main-title">Андрей Чижиков</h1>
 
-        <nav>
-            <ul>
-                <li><a href="#">Обо мне</a></li>
-                <li><a href="#">Мое хобби</a></li>
-                <li><a href="#">Контакты</a></li>
+        <nav class="site-nav">
+            <ul class="nav-list">
+                <li><a class="nav-link" href="#">Обо мне</a></li>
+                <li><a class="nav-link" href="#">Мое хобби</a></li>
+                <li><a class="nav-link" href="#">Контакты</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Обо мне</h2>
+    <main class="main-content">
+        <section class="about-section">
+            <h2 class="section-title">Обо мне</h2>
 
             <p>Меня зовут Андрей, мне 19 лет.</p>
             <p>Я живу в городе Саранске вместе со своей семьей.</p>
             <p>Я учусь в университете.</p>
 
-            <img src="photo.jpg" alt="Фото университета">
+            <img class="profile-photo" src="photo.jpg" alt="Фото университета">
         </section>
 
-        <section>
-            <h2>Мое хобби</h2>
+        <section class="hobby-section">
+            <h2 class="section-title">Мое хобби</h2>
 
-            <article>
-                <h3>Компьютерные игры</h3>
+            <article class="hobby-card">
+                <h3 class="hobby-title">Путешествия</h3>
 
                 <p>Одно из моих хобби — путешествие.</p>
             </article>
         </section>
     </main>
 
-    <aside>
-        <h2>Хобби</h2>
+    <aside class="sidebar">
+        <h2 class="sidebar-title">Хобби</h2>
 
-        <ol>
+        <ol class="hobby-list">
             <li>Я люблю путешествовать по городам</li>
         </ol>
     </aside>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Андрей Чижиков</p>
 
         <p>
-            <a href="https://github.com/Andereyr" target="_blank">GitHub</a>
+            <a class="footer-link" href="https://github.com/Anderey" target="_blank">GitHub</a>
         </p>
     </footer>
 </body>
