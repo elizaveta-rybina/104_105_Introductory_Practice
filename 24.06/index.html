@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Артём Попов — Визитка</title>
+    <meta name="description" content="Личная страница-визитка Артёма Попова: обо мне, хобби, проекты.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Подключаем скрипт с отложенным выполнением -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="page-header">
+        <h1 class="main-title">Артём Попов</h1>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">Обо мне</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Хобби</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Проекты</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Глобальный каркас на Grid -->
+    <div class="content-grid">
+
+        <!-- Главное содержимое -->
+        <main class="page-main">
+
+            <section class="about-section">
+                <h2 class="section-title">Обо мне</h2>
+                <p>Привет! Меня зовут Артём, я начинающий веб-разработчик. Учусь создавать современные сайты с нуля, осваиваю HTML, CSS и JavaScript. Люблю решать логические задачи и разбираться, как устроены технологии.</p>
+                <p>В свободное время изучаю новые языки программирования, читаю техническую литературу и тренируюсь в написании чистого кода.</p>
+                <img src="avatar.jpg" alt="Фото Артёма Попова за ноутбуком" class="avatar">
+            </section>
+
+            <section class="hobby-section">
+                <h2 class="section-title">Моё хобби</h2>
+                <article class="hobby-article">
+                    <h3 class="hobby-title">Спортивное программирование</h3>
+                    <p>Участвую в онлайн-соревнованиях на платформах Codeforces и LeetCode. Это помогает прокачивать алгоритмическое мышление и быстро находить нестандартные решения.</p>
+                    <p>Также увлекаюсь настольным теннисом и фотографией, но программирование остаётся главным увлечением.</p>
+                </article>
+            </section>
+
+            <!-- Секция "Мои проекты" – теперь контейнер пуст, карточки генерируются через JS -->
+            <section class="projects-section">
+                <h2 class="section-title">Мои проекты</h2>
+                <div class="projects-grid" id="projectsContainer"></div>
+            </section>
+
+            <!-- Секция с формой обратной связи -->
+            <section class="contact-section">
+                <h2 class="section-title">Свяжитесь со мной</h2>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="user_name" class="form-label">Ваше имя</label>
+                        <input type="text" id="user_name" name="user_name" class="form-input" placeholder="Артём" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email" class="form-label">Электронная почта</label>
+                        <input type="email" id="user_email" name="user_email" class="form-input" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_message" class="form-label">Сообщение</label>
+                        <textarea id="user_message" name="user_message" class="form-input" rows="4" placeholder="Напишите ваше сообщение..."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="user_agree" name="user_agree" class="form-checkbox" required>
+                        <label for="user_agree" class="form-label checkbox-label">Я согласен на обработку персональных данных</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- Боковая панель -->
+        <aside class="sidebar">
+            <h3 class="sidebar-title">Любимые книги</h3>
+            <ol class="book-list">
+                <li>«Совершенный код» — Стив Макконнелл</li>
+                <li>«Чистый код» — Роберт Мартин</li>
+                <li>«Грокаем алгоритмы» — Адитья Бхаргава</li>
+            </ol>
+        </aside>
+
+    </div>
+
+    <!-- Подвал -->
+    <footer class="page-footer">
+        <p>&copy; 2026, Артём Попов</p>
+        <p>
+            <a href="https://github.com/artempopov" target="_blank" class="footer-link">Мой GitHub</a>
+        </p>
+    </footer>
+
+</body>
+</html>

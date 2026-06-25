@@ -1,0 +1,276 @@
+console.log('===== ЛАБОРАТОРНАЯ РАБОТА №6 (Основы JavaScript) =====');
+console.log('Результаты всех задач выводятся ниже.\n');
+
+// --------------------------------------------------------------
+// Задача 1: «Умный пропускной пункт»
+// --------------------------------------------------------------
+console.log('--- Задача 1 ---');
+const age = 16;
+const height = 145;
+
+if (age < 8) {
+    console.log('Вход запрещен, слишком мал');
+} else if (age >= 8 && age <= 18 && height < 140) {
+    console.log('Вход только с родителями');
+} else if (age > 18 || (age >= 8 && height >= 140)) {
+    console.log('Добро пожаловать на аттракцион!');
+}
+console.log('');
+
+// --------------------------------------------------------------
+// Задача 2: «Анализатор последовательности»
+// --------------------------------------------------------------
+console.log('--- Задача 2 ---');
+let sum = 0;
+for (let i = 1; i <= 200; i++) {
+    if (i % 3 === 0 && i % 5 !== 0) {
+        sum += i;
+    }
+}
+console.log('Сумма чисел от 1 до 200, которые делятся на 3, но не на 5:', sum);
+console.log('');
+
+// --------------------------------------------------------------
+// Задача 3: «Шифратор»
+// --------------------------------------------------------------
+console.log('--- Задача 3 ---');
+for (let i = 15; i >= 1; i--) {
+    if (i % 2 === 0) {
+        console.log(i);
+    } else {
+        console.log(i * 2);
+    }
+}
+console.log('');
+
+// --------------------------------------------------------------
+// Задача 4: «Финансовый симулятор»
+// --------------------------------------------------------------
+console.log('--- Задача 4 ---');
+let capital = 10000;
+for (let year = 1; year <= 10; year++) {
+    capital = capital + capital * 0.08;
+}
+console.log('Капитал через 10 лет:', Math.round(capital * 100) / 100, 'руб.');
+console.log('');
+
+// --------------------------------------------------------------
+// Задача 5: «Строитель лесенки»
+// --------------------------------------------------------------
+console.log('--- Задача 5 ---');
+let ladder = '';
+for (let i = 1; i <= 6; i++) {
+    ladder += '#';
+    console.log(ladder);
+}
+console.log('');
+
+// --------------------------------------------------------------
+// Задача 6: «Космический передатчик»
+// --------------------------------------------------------------
+console.log('--- Задача 6 ---');
+for (let i = 1; i <= 50; i++) {
+    if (i % 4 === 0 && i % 7 === 0) {
+        console.log('BeepBoop');
+    } else if (i % 4 === 0) {
+        console.log('Beep');
+    } else if (i % 7 === 0) {
+        console.log('Boop');
+    } else {
+        console.log(i);
+    }
+}
+console.log('');
+
+// --------------------------------------------------------------
+// Задача 7: «Гипотеза Сиракуз»
+// --------------------------------------------------------------
+console.log('--- Задача 7 ---');
+let n = 27;
+for (let step = 1; step <= 15; step++) {
+    if (n % 2 === 0) {
+        n = n / 2;
+    } else {
+        n = n * 3 + 1;
+    }
+    console.log('Шаг ' + step + ': ' + n);
+}
+console.log('\n===== КОНЕЦ ЛР6 =====\n');
+
+// ====================================================================
+// ===== ЛАБОРАТОРНАЯ РАБОТА №7 (Массивы, объекты, Set, Map) =====
+// ====================================================================
+
+console.log('===== ЛАБОРАТОРНАЯ РАБОТА №7 =====\n');
+
+// --------------------------------------------------------------
+// Шаг 1: Проектирование архитектуры (Создание БД)
+// --------------------------------------------------------------
+console.log('--- Шаг 1: Создание portfolioData ---');
+
+const portfolioData = {
+    // Профиль пользователя
+    profile: {
+        name: 'Артём Попов',
+        profession: 'Веб-разработчик',
+        age: 22
+    },
+
+    // Массив проектов (не менее 5)
+    projects: [
+        {
+            id: 1,
+            title: 'Портфолио-сайт',
+            category: 'Веб',
+            likes: 145,
+            technologies: ['HTML', 'CSS', 'JavaScript']
+        },
+        {
+            id: 2,
+            title: 'Анализатор данных',
+            category: 'Бекенд',
+            likes: 89,
+            technologies: ['Python', 'Pandas', 'Matplotlib']
+        },
+        {
+            id: 3,
+            title: 'Игра "Угадай число"',
+            category: 'Веб',
+            likes: 210,
+            technologies: ['HTML', 'CSS', 'JavaScript']
+        },
+        {
+            id: 4,
+            title: 'Мобильное приложение',
+            category: 'Дизайн',
+            likes: 56,
+            technologies: ['Figma', 'React Native']
+        },
+        {
+            id: 5,
+            title: 'API-шлюз',
+            category: 'Бекенд',
+            likes: 178,
+            technologies: ['Node.js', 'Express', 'JavaScript']
+        },
+        {
+            id: 6,
+            title: 'Домашний сервер',
+            category: 'Инфраструктура',
+            likes: 34,
+            technologies: ['Linux', 'Docker', 'Nginx']
+        }
+    ],
+
+    // Настройки сайта (коллекция Map)
+    preferences: new Map([
+        ['theme', 'dark'],
+        ['language', 'ru']
+    ])
+};
+
+console.log('База данных создана.');
+console.log('');
+
+// --------------------------------------------------------------
+// Шаг 2: Анализ профиля (Object.keys)
+// --------------------------------------------------------------
+console.log('--- Шаг 2: Ключи профиля ---');
+const profileKeys = Object.keys(portfolioData.profile);
+console.log('Ключи профиля:', profileKeys);
+console.log('');
+
+// --------------------------------------------------------------
+// Шаг 3: Выборка лучших работ (filter + map)
+// --------------------------------------------------------------
+console.log('--- Шаг 3: Проекты с > 100 лайков ---');
+const popularProjects = portfolioData.projects
+    .filter(project => project.likes > 100)
+    .map(project => `Проект: "${project.title}" из категории ${project.category}`);
+
+console.log('Список популярных проектов:');
+popularProjects.forEach((item, index) => {
+    console.log(`  ${index + 1}. ${item}`);
+});
+console.log('');
+
+// --------------------------------------------------------------
+// Шаг 4: Подсчет статистики (сумма лайков)
+// --------------------------------------------------------------
+console.log('--- Шаг 4: Общее число лайков ---');
+let totalLikes = 0;
+portfolioData.projects.forEach(project => {
+    totalLikes += project.likes;
+});
+console.log(`Общее число лайков: ${totalLikes}`);
+console.log('');
+
+// --------------------------------------------------------------
+// Шаг 5: Облако тегов (Set для уникальных технологий)
+// --------------------------------------------------------------
+console.log('--- Шаг 5: Уникальные технологии (Set) ---');
+const techSet = new Set();
+portfolioData.projects.forEach(project => {
+    project.technologies.forEach(tech => techSet.add(tech));
+});
+console.log('Все использованные технологии (без дубликатов):');
+console.log(techSet);
+console.log('Количество уникальных технологий:', techSet.size);
+console.log('\n===== КОНЕЦ ЛР7 =====\n');
+
+// ====================================================================
+// ===== ЛАБОРАТОРНАЯ РАБОТА №8 (Динамический рендеринг карточек) =====
+// ====================================================================
+
+console.log('===== ЛАБОРАТОРНАЯ РАБОТА №8 =====');
+
+// Находим контейнер для карточек
+const projectsContainer = document.querySelector('#projectsContainer');
+
+if (projectsContainer) {
+    console.log('Контейнер найден, начинаем рендеринг...');
+
+    // Очищаем контейнер (на случай, если там что-то осталось)
+    projectsContainer.innerHTML = '';
+
+    // Получаем массив проектов из нашей БД
+    const projects = portfolioData.projects;
+
+    // Для каждого проекта создаём карточку
+    projects.forEach(project => {
+        // Создаём главный div карточки
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+
+        // Иконка (эмодзи по категории)
+        const icon = document.createElement('div');
+        icon.classList.add('project-icon');
+        const categoryIcons = {
+            'Веб': '🌐',
+            'Бекенд': '⚙️',
+            'Дизайн': '🎨',
+            'Инфраструктура': '🖥️'
+        };
+        icon.textContent = categoryIcons[project.category] || '📁';
+
+        // Заголовок (название проекта)
+        const title = document.createElement('h3');
+        title.classList.add('project-name');
+        title.textContent = project.title;
+
+        // Описание (категория + лайки)
+        const desc = document.createElement('p');
+        desc.classList.add('project-desc');
+        desc.textContent = `${project.category} • ❤️ ${project.likes}`;
+
+        // Собираем карточку
+        card.append(icon, title, desc);
+
+        // Вставляем в контейнер
+        projectsContainer.append(card);
+    });
+
+    console.log(`✅ Рендеринг завершён. Создано ${projects.length} карточек.`);
+} else {
+    console.warn('⚠️ Контейнер #projectsContainer не найден на странице!');
+}

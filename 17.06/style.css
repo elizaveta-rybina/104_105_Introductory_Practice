@@ -1,0 +1,139 @@
+/* 1. Сброс стандартных отступов и базовый шрифт */
+body {
+    margin: 0;                      /* Убираем внешние отступы у body */
+    font-family: 'Roboto', sans-serif; /* Основной шрифт с запасным sans-serif */
+    background-color: #f9f9f9;      /* Лёгкий фон для всей страницы */
+    color: #222;                    /* Базовый цвет текста */
+}
+
+/* 2. Стили для шапки */
+.page-header {
+    background-color: #2c3e50;      /* Тёмно-синий фон */
+    color: #ecf0f1;                 /* Светлый текст */
+    padding: 20px 30px;             /* Внутренние отступы: сверху/снизу 20px, слева/справа 30px */
+    text-align: center;             /* Центрирование содержимого */
+}
+
+/* 3. Главный заголовок h1 */
+.main-title {
+    font-size: 36px;                /* Крупный размер */
+    color: #e74c3c;                 /* Красноватый акцент */
+    margin: 0;                      /* Убираем стандартный отступ, чтобы не нарушать padding */
+    font-weight: 700;               /* Жирное начертание */
+}
+
+/* 4. Навигация (список ссылок) */
+.main-nav {
+    margin-top: 10px;               /* Небольшой отступ сверху от заголовка */
+}
+
+.nav-list {
+    list-style: none;               /* Убираем маркеры списка */
+    padding: 0;                     /* Убираем стандартный отступ ul */
+    margin: 0;                      /* Убираем внешний отступ */
+    display: flex;                  /* Горизонтальное расположение пунктов (Flexbox) */
+    justify-content: center;        /* Выравнивание по центру */
+    gap: 30px;                      /* Расстояние между пунктами */
+}
+
+.nav-link {
+    color: #1abc9c;                 /* Бирюзовый цвет (не синий) */
+    text-decoration: none;          /* Убираем подчёркивание */
+    font-weight: 700;               /* Жирный для наглядности */
+    font-size: 18px;
+    transition: color 0.3s ease;    /* Плавная смена цвета при наведении (опционально) */
+}
+
+.nav-link:hover {
+    color: #f1c40f;                 /* Жёлтый при наведении */
+}
+
+/* 5. Основной контент (main) */
+.page-main {
+    max-width: 900px;               /* Ограничиваем ширину для комфортного чтения */
+    margin: 20px auto;              /* Центрируем блок по горизонтали */
+    padding: 0 20px;                /* Боковые отступы, чтобы не прилипало к краям на маленьких экранах */
+}
+
+/* 6. Секции внутри main */
+.about-section,
+.hobby-section {
+    background-color: #ffffff;      /* Белый фон для контраста */
+    padding: 25px 30px;             /* Внутренние отступы */
+    margin-bottom: 30px;            /* Внешний отступ снизу, чтобы секции не слипались */
+    border-radius: 10px;            /* Лёгкое скругление углов (для красоты) */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Лёгкая тень (опционально) */
+}
+
+/* 7. Заголовки секций (h2) */
+.section-title {
+    color: #2c3e50;                 /* Тёмно-синий */
+    font-size: 28px;
+    margin-top: 0;                  /* Убираем верхний отступ, чтобы не нарушать padding секции */
+    border-bottom: 3px solid #e74c3c; /* Декоративная линия снизу */
+    padding-bottom: 8px;
+}
+
+/* 8. Заголовок h3 внутри статьи (хобби) */
+.hobby-title {
+    color: #e67e22;                 /* Оранжевый акцент */
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+/* 9. Стили для фотографии (аватар) */
+.avatar {
+    width: 220px;                   /* Фиксированная ширина (можно менять от 150 до 300) */
+    border: 5px solid #3498db;      /* Синяя рамка толщиной 5px */
+    border-radius: 20px;            /* Скругление углов (можно 50% для круга) */
+    display: block;                 /* Делаем блочным, чтобы применить margin auto */
+    margin: 15px auto 0;            /* Центрирование по горизонтали, отступ сверху 15px */
+}
+
+/* 10. Боковая панель (aside) */
+.sidebar {
+    background-color: #ecf0f1;      /* Светло-серый фон */
+    padding: 20px 25px;
+    margin: 0 auto 30px;            /* Центрируем и даём отступ снизу */
+    max-width: 900px;               /* Такая же ширина, как у main */
+    border-radius: 10px;
+}
+
+.sidebar-title {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.book-list {
+    padding-left: 25px;             /* Отступ для нумерации */
+    margin: 10px 0 0;
+    font-size: 17px;
+    line-height: 1.8;               /* Межстрочный интервал для читаемости */
+}
+
+/* 11. Подвал (футер) */
+.page-footer {
+    background-color: #2c3e50;      /* Тот же цвет, что и шапка */
+    color: #ecf0f1;
+    padding: 20px 30px;
+    text-align: center;
+    margin-top: 20px;               /* Отделяем от основного контента */
+}
+
+.footer-link {
+    color: #1abc9c;                 /* Бирюзовый, как в навигации */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-link:hover {
+    color: #f1c40f;
+}
+
+/* 12. Дополнительно: абзацы в секциях имеют стандартные отступы, но можно добавить */
+.about-section p,
+.hobby-section p {
+    line-height: 1.6;               /* Улучшаем читаемость */
+    margin: 10px 0;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Артём Попов — Визитка</title>
+    <meta name="description" content="Личная страница-визитка Артёма Попова: обо мне, хобби, проекты.">
+
+    <!-- Подключение шрифта Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Подключение внешней таблицы стилей -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта (Flexbox) -->
+    <header class="page-header">
+        <h1 class="main-title">Артём Попов</h1>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">Обо мне</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Хобби</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Проекты</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Глобальный каркас на Grid (макро-компоновка) -->
+    <div class="content-grid">
+
+        <!-- Главное содержимое -->
+        <main class="page-main">
+            <!-- Секция "Обо мне" -->
+            <section class="about-section">
+                <h2 class="section-title">Обо мне</h2>
+                <p>Привет! Меня зовут Артём, я начинающий веб-разработчик. Учусь создавать современные сайты с нуля, осваиваю HTML, CSS и JavaScript. Люблю решать логические задачи и разбираться, как устроены технологии.</p>
+                <p>В свободное время изучаю новые языки программирования, читаю техническую литературу и тренируюсь в написании чистого кода.</p>
+                <img src="avatar.jpg" alt="Фото Артёма Попова за ноутбуком" class="avatar">
+            </section>
+
+            <!-- Секция "Моё хобби" -->
+            <section class="hobby-section">
+                <h2 class="section-title">Моё хобби</h2>
+                <article class="hobby-article">
+                    <h3 class="hobby-title">Спортивное программирование</h3>
+                    <p>Участвую в онлайн-соревнованиях на платформах Codeforces и LeetCode. Это помогает прокачивать алгоритмическое мышление и быстро находить нестандартные решения. Регулярно решаю задачи разного уровня сложности.</p>
+                    <p>Также увлекаюсь настольным теннисом и фотографией, но программирование остаётся главным увлечением.</p>
+                </article>
+            </section>
+
+            <!-- Новая секция "Мои проекты" (сетка карточек) -->
+            <section class="projects-section">
+                <h2 class="section-title">Мои проекты</h2>
+                <div class="projects-grid">
+                    <!-- Карточка проекта 1 -->
+                    <div class="project-card">
+                        <div class="project-icon">🚀</div>
+                        <h3 class="project-name">Портфолио-сайт</h3>
+                        <p class="project-desc">Личный сайт-визитка, свёрстанный по БЭМ с использованием Grid и Flexbox.</p>
+                    </div>
+                    <!-- Карточка проекта 2 -->
+                    <div class="project-card">
+                        <div class="project-icon">📊</div>
+                        <h3 class="project-name">Анализатор данных</h3>
+                        <p class="project-desc">Приложение на Python для визуализации статистических данных из CSV-файлов.</p>
+                    </div>
+                    <!-- Карточка проекта 3 -->
+                    <div class="project-card">
+                        <div class="project-icon">🎮</div>
+                        <h3 class="project-name">Игра "Угадай число"</h3>
+                        <p class="project-desc">Консольная игра на JavaScript с логикой подсчёта попыток и подсказками.</p>
+                    </div>
+                    <!-- Карточка проекта 4 -->
+                    <div class="project-card">
+                        <div class="project-icon">📱</div>
+                        <h3 class="project-name">Мобильное приложение</h3>
+                        <p class="project-desc">Прототип трекера привычек на React Native (в процессе разработки).</p>
+                    </div>
+                    <!-- Карточка проекта 5 (дополнительно) -->
+                    <div class="project-card">
+                        <div class="project-icon">🌐</div>
+                        <h3 class="project-name">API-шлюз</h3>
+                        <p class="project-desc">Микросервис на Node.js для маршрутизации запросов к внешним API.</p>
+                    </div>
+                    <!-- Карточка проекта 6 -->
+                    <div class="project-card">
+                        <div class="project-icon">🖥️</div>
+                        <h3 class="project-name">Домашний сервер</h3>
+                        <p class="project-desc">Настройка Raspberry Pi для хостинга личных проектов и автоматизации задач.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Боковая панель (aside) -->
+        <aside class="sidebar">
+            <h3 class="sidebar-title">Любимые книги</h3>
+            <ol class="book-list">
+                <li>«Совершенный код» — Стив Макконнелл</li>
+                <li>«Чистый код» — Роберт Мартин</li>
+                <li>«Грокаем алгоритмы» — Адитья Бхаргава</li>
+            </ol>
+        </aside>
+
+    </div>
+
+    <!-- Подвал (футер) -->
+    <footer class="page-footer">
+        <p>&copy; 2026, Артём Попов</p>
+        <p>
+            <a href="https://github.com/artempopov" target="_blank" class="footer-link">Мой GitHub</a>
+        </p>
+    </footer>
+
+</body>
+</html>

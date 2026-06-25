@@ -1,0 +1,243 @@
+/* 0. Глобальные настройки – предотвращаем выход за пределы экрана */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+img {
+    max-width: 100%;   /* изображения не выходят за границы родителя */
+    height: auto;      /* сохраняем пропорции */
+}
+
+/* 1. Шапка – Flexbox (микро-компоновка) */
+.page-header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 5%;          /* относительные отступы по бокам */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-title {
+    font-size: 32px;
+    color: #e74c3c;
+    margin: 0;
+    font-weight: 700;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f1c40f;
+}
+
+/* 2. Глобальный каркас – Grid (макро-компоновка) */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* основная колонка 2 части, боковая – 1 */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 5%;              /* относительные боковые отступы */
+}
+
+/* 3. Главное содержимое – тоже Grid для секций (используем gap вместо margin) */
+.page-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Секции внутри main */
+.about-section,
+.hobby-section,
+.projects-section {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-top: 0;
+    border-bottom: 3px solid #e74c3c;
+    padding-bottom: 8px;
+}
+
+/* 4. Аватар – относительная ширина */
+.avatar {
+    width: 80%;                 /* ширина относительно родительского контейнера */
+    max-width: 300px;           /* но не более 300px, чтобы на больших экранах не расплывался */
+    border: 5px solid #3498db;
+    border-radius: 20px;
+    display: block;
+    margin: 15px auto 0;
+}
+
+/* 5. Хобби */
+.hobby-title {
+    color: #e67e22;
+    font-size: 22px;
+    margin-top: 5px;
+}
+
+/* 6. Боковая панель */
+.sidebar {
+    background-color: #ecf0f1;
+    padding: 20px 25px;
+    border-radius: 10px;
+    align-self: start;
+}
+
+.sidebar-title {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.book-list {
+    padding-left: 25px;
+    margin: 10px 0 0;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* 7. Сетка карточек проектов – Grid (макро) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* 8. Карточка проекта – Flexbox (микро) для внутреннего содержимого */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px 15px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.project-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.project-name {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+.project-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    margin: 5px 0 0;
+}
+
+/* 9. Подвал (футер) */
+.page-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 5%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-link {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-link:hover {
+    color: #f1c40f;
+}
+
+/* ============================================================ */
+/* 10. АДАПТИВНОСТЬ – МЕДИА-ЗАПРОСЫ                              */
+/* ============================================================ */
+
+/* Планшеты и узкие экраны (ширина ≤ 900px) – перестраиваем глобальную сетку */
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;   /* вместо 2fr 1fr – одна колонка */
+        gap: 20px;
+    }
+
+    .sidebar {
+        /* порядок в DOM: sidebar идёт после main, поэтому окажется под ним */
+        align-self: stretch;
+    }
+}
+
+/* Мобильные устройства (ширина ≤ 768px) – трансформируем шапку и карточки */
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;      /* меняем направление главной оси */
+        align-items: center;         /* центрируем по поперечной оси */
+        text-align: center;
+        gap: 15px;                  /* добавляем промежуток между элементами шапки */
+    }
+
+    .main-title {
+        font-size: 28px;            /* чуть уменьшаем заголовок */
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;                  /* уменьшаем расстояние между ссылками */
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* две колонки вместо трёх */
+    }
+}
+
+/* Маленькие смартфоны (ширина ≤ 480px) – сетка карточек в одну колонку */
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;  /* одна колонка */
+    }
+
+    .avatar {
+        width: 100%;                /* аватар занимает всю ширину родителя */
+        max-width: 250px;           /* но не слишком большой */
+    }
+}
