@@ -1,0 +1,377 @@
+/* ===== ОБЩИЕ СТИЛИ И СБРОС ===== */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* ==============================================
+   ГЛОБАЛЬНЫЙ КАРКАС (МАКРО-КОМПОНОВКА НА GRID)
+   ============================================== */
+
+/* ОСНОВНАЯ СЕТКА: асимметричная двухколоночная раскладка */
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+    /* Активация Grid-контекста */
+    display: grid;
+
+    /* Двухколоночная асимметричная сетка:
+       левая колонка (основной контент) — 2 части
+       правая колонка (сайдбар) — 1 часть */
+    grid-template-columns: 2fr 1fr;
+
+    /* Отступы между колонками и строками — только gap! */
+    gap: 30px;
+}
+
+/* ===== КАЖДАЯ СЕКЦИЯ ЗАНИМАЕТ ВСЮ ШИРИНУ СВОЕЙ КОЛОНКИ ===== */
+.about-section,
+.hobby-section,
+.projects-section {
+    background-color: #ffffff;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Секция "Обо мне" и "Хобби" — в левой колонке (2fr) */
+.about-section {
+    grid-column: 1 / 2;
+}
+
+.hobby-section {
+    grid-column: 1 / 2;
+}
+
+/* Секция "Проекты" — растягивается на всю ширину сетки */
+.projects-section {
+    grid-column: 1 / 3;
+}
+
+/* Боковая панель — в правой колонке (1fr) */
+.sidebar {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3; /* Растягиваем сайдбар на две строки */
+    background-color: #e9ecef;
+    padding: 25px 30px;
+    border-radius: 12px;
+    align-self: start; /* Чтобы не растягивался на всю высоту */
+}
+
+/* ==============================================
+   ШАПКА (МИКРО-КОМПОНОВКА НА FLEXBOX)
+   ============================================== */
+
+.main-header {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    padding: 20px 40px;
+
+    /* Активация Flexbox */
+    display: flex;
+
+    /* Распределение по главной оси — логотип слева, меню справа */
+    justify-content: space-between;
+
+    /* Выравнивание по поперечной оси — по центру */
+    align-items: center;
+}
+
+.site-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e94560;
+    margin: 0;
+}
+
+/* ===== НАВИГАЦИЯ (Flexbox внутри) ===== */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+
+    /* Отступы между пунктами меню — только gap! */
+    gap: 30px;
+}
+
+.nav-link {
+    color: #f8f9fa;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #e94560;
+}
+
+/* ==============================================
+   СЕКЦИЯ "ПРОЕКТЫ" (СЕТКА КАРТОЧЕК)
+   ============================================== */
+
+.projects-section {
+    margin-top: 0;
+}
+
+.projects-grid {
+    /* Активация Grid для сетки карточек */
+    display: grid;
+
+    /* 3 колонки равной ширины */
+    grid-template-columns: repeat(3, 1fr);
+
+    /* Отступы между карточками — только gap! */
+    gap: 25px;
+}
+
+/* ===== КАРТОЧКА ПРОЕКТА (Flexbox - микро-компоновка) ===== */
+.project-card {
+    background-color: #f8f9fa;
+    padding: 25px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #e94560;
+
+    /* Активация Flexbox для внутреннего содержимого */
+    display: flex;
+
+    /* Вертикальное направление (колонка) */
+    flex-direction: column;
+
+    /* Выравнивание по центру поперечной оси */
+    align-items: center;
+
+    /* Текст по центру */
+    text-align: center;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.project-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 5px 0;
+}
+
+.project-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #495057;
+    margin: 8px 0 12px;
+    flex-grow: 1; /* Чтобы описание занимало всё доступное место */
+}
+
+.project-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #e94560;
+    background-color: rgba(233, 69, 96, 0.1);
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-top: auto;
+}
+
+/* ==============================================
+   ОСТАЛЬНЫЕ СТИЛИ (БЕЗ ИЗМЕНЕНИЙ)
+   ============================================== */
+
+.section-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: auto;
+    border: 4px solid #e94560;
+    border-radius: 16px;
+    display: block;
+    margin-top: 20px;
+}
+
+.hobby-card {
+    background-color: #f8f9fa;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border-left: 4px solid #e94560;
+}
+
+.hobby-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.hobby-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #343a40;
+    margin-bottom: 12px;
+}
+
+.book-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.book-list li:last-child {
+    border-bottom: none;
+}
+
+.book-list strong {
+    color: #1a1a2e;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.book-list-ordered {
+    padding-left: 25px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #343a40;
+}
+
+/* ===== ФУТЕР (Flexbox) ===== */
+.main-footer {
+    background-color: #1a1a2e;
+    color: #f8f9fa;
+    padding: 25px 40px;
+
+    display: flex;
+
+    /* Распределение по главной оси */
+    justify-content: space-between;
+
+    /* Выравнивание по центру */
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+.footer-text {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-link {
+    color: #e94560;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ==============================================
+   АДАПТИВНОСТЬ (Media Queries)
+   ============================================== */
+
+@media (max-width: 768px) {
+    /* Меняем глобальную сетку на одноколоночную */
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-section,
+    .hobby-section,
+    .projects-section {
+        grid-column: 1 / 2;
+    }
+
+    .sidebar {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    /* Меняем сетку карточек на 2 колонки */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Шапка становится вертикальной */
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Футер становится вертикальным */
+    .main-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-title {
+        font-size: 26px;
+    }
+}
